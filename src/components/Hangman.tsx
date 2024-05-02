@@ -1,6 +1,7 @@
 import { useState } from "react";
 import hangman from '../img/hangman.png';
 import '../css/Hangman.css'
+import Conteo from "./Conteo";
 
 interface HangmanProps {
     words: string[];
@@ -49,7 +50,10 @@ const Hangman = ({ words, hint }: HangmanProps) => { //Esqueleto del componente
             <p className="pista">Pista: {hint}</p>
             <img src={hangman} alt="hangman image..." width={200} height={200}></img>
             <p>{displayWord.join(' ')}</p>
-
+            <div className="App">
+            <h1>My React App</h1>
+            <Conteo />
+            </div>
             <input maxLength={1} onChange={(e) => handleGuess(e.target.value)} />
             {
                 (displayWord.join('') === selectedWords || errorCount > 5) && (
